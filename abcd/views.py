@@ -17,4 +17,9 @@ def title(request):
 		title=soup.title.string
 		Webd.objects.create(name=title)
 		return render(request,'title.html', {'til':title})
-	
+
+#  Dynamic routing of url		
+def dynami(request,id):
+
+	a = Webd.objects.get(id = id)
+	return render(request,'dynami.html',{'abc':a})

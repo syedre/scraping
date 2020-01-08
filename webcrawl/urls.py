@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from abcd import views
-from abcd.views import home,title
+from abcd.views import home,title,dynami
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('abcd.urls')),
-    path('title',views.title,name = 'title'),
+    path('title',views.title,name ='title'),
+    path('<int:id>',views.dynami,name='dynami'),
    
 
 ]
